@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Google Animated Heading</title>
+    <style>
+        body {
+            background: #f5f5f5;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            place-items: center;
+            min-height: 100vh;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            gap: 30px;
+            justify-items: center;
+            max-width: 600px;
+            width: 100%;
+            padding: 20px;
+        }
+
+        .moving-heading {
+            font-size: 3em;
+            font-weight: bold;
+            letter-spacing: 2px;
+            animation: moveHeading 2s infinite alternate;
+            background: linear-gradient(90deg, #4285F4, #EA4335, #FBBC05, #34A853, #4285F4);
+            background-size: 200% auto;
+            color: transparent;
+            background-clip: text;
+            -webkit-background-clip: text;
+        }
+
+        @keyframes moveHeading {
+            0% { transform: translateX(0); }
+            50% { transform: translateX(40px); }
+            100% { transform: translateX(0); }
+        }
+
+        .scroll-box {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+            width: 100%;
+            height: 180px;
+            padding: 18px;
+            overflow-y: auto;
+            text-align: left;
+            font-size: 1.1em;
+            line-height: 1.6;
+            border: 1px solid #e0e0e0;
+            position: relative;
+        }
+
+        .google-img {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+            display: block;
+            margin: 0 auto 12px auto;
+        }
+
+        .scroll-btn {
+            padding: 8px 20px;
+            background: #4285F4;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-size: 1em;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+
+        .scroll-btn:hover {
+            background: #3367d6;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <div class="moving-heading">Google</div>
+        <div class="scroll-box" id="scrollBox">
+            <img class="google-img" src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google Logo">
+            Google is a multinational technology company specializing in Internet-related services and products, which include online advertising technologies, a search engine, cloud computing, software, and hardware. Google is considered one of the most influential tech companies in the world, shaping the way people access and interact with information every day. Its mission is to organize the world’s information and make it universally accessible and useful.
+        </div>
+        <button class="scroll-btn" onclick="document.getElementById('scrollBox').scrollTop = 0;">continue</button>
+    </div>
+</body>
+</html>
