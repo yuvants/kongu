@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Portfolio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500&display=swap');
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f5f7fa; /* Professional soft gray */
+            color: #222;
+        }
+        header {
+            background: linear-gradient(90deg, #0f2027 0%, #2c5364 100%);
+            color: #fff;
+            padding: 32px 0 20px 0;
+            text-align: center;
+        }
+        header h1 {
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-size: 2.5rem;
+            margin: 10px 0 5px 0;
+            letter-spacing: 2px;
+        }
+        header p {
+            font-family: 'Roboto', Arial, sans-serif;
+            font-size: 1.2rem;
+            color: #b3e5fc;
+            margin: 0;
+        }
+        section {
+            background: #fff;
+            margin: 24px auto;
+            padding: 28px 24px;
+            max-width: 800px;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(44,83,100,0.08);
+        }
+        h2 {
+            font-family: 'Montserrat', Arial, sans-serif;
+            color: #2c5364;
+            font-size: 2rem;
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+        }
+        .projects {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            flex-direction: row;
+            justify-content: center;
+            align-items: stretch;
+        }
+        .project-card {
+            background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+            padding: 18px;
+            border-radius: 10px;
+            flex: 1 1 100%;
+            max-width: 100%;
+            min-width: 350px;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            gap: 24px;
+            box-shadow: 0 1px 6px rgba(44,83,100,0.07);
+            font-family: 'Roboto', Arial, sans-serif;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .project-card > img,
+        .project-card > video,
+        .project-card > iframe {
+            width: 220px;
+            height: 140px;
+            border-radius: 8px;
+            object-fit: cover;
+            flex-shrink: 0;
+            background: #fff;
+        }
+        .project-card-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .project-card h3 {
+            font-family: 'Montserrat', Arial, sans-serif;
+            color: #0f2027;
+            font-size: 1.3rem;
+            margin-top: 0;
+            margin-bottom: 8px;
+        }
+        .project-card p {
+            font-size: 1rem;
+            color: #333;
+            margin-bottom: 8px;
+        }
+        .project-card ul {
+            padding-left: 18px;
+            margin: 0 0 8px 0;
+            font-size: 0.97rem;
+            color: #2c5364;
+        }
+        .project-card li {
+            margin-bottom: 4px;
+        }
+        footer {
+            text-align: center;
+            padding: 14px 0;
+            background: linear-gradient(90deg, #2c5364 0%, #0f2027 100%);
+            color: #fff;
+            margin-top: 40px;
+            font-family: 'Roboto', Arial, sans-serif;
+            font-size: 1rem;
+            letter-spacing: 1px;
+        }
+        /* Contact section styling */
+        #contact p, #contact a {
+            font-size: 1.08rem;
+            color: #0f2027;
+            font-family: 'Roboto', Arial, sans-serif;
+        }
+        #contact a {
+            text-decoration: underline;
+            color: #1976d2;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="c:\Users\yuvan\Downloads\1726051764788.jpeg" alt="Profile Photo" style="border-radius:50%;margin-bottom:10px;width:120px;height:120px;object-fit:cover;box-shadow:0 2px 8px rgba(44,83,100,0.15);">
+        <h1>Yuvanshankar</h1>
+        <p>Web Developer & Designer</p>
+    </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>
+            Hi! I'm Yuvanshankar, a passionate web developer with experience in building modern, responsive websites and web applications.
+            I love turning ideas into reality using code.
+        </p>
+        <p>
+            I specialize in front-end and back-end development, with a strong foundation in HTML, CSS, JavaScript, and database management. My projects reflect my commitment to clean code, user-centric design, and innovative solutions.
+        </p>
+        <p>
+            I am a quick learner, enjoy collaborating in teams, and thrive on solving challenging problems. My interests include automation, UI/UX design, and exploring new technologies. Outside of coding, I enjoy reading tech blogs, participating in hackathons, and mentoring junior developers.
+        </p>
+        <p>
+            My goal is to contribute to impactful projects and continuously grow as a developer. I am always open to new opportunities and collaborations.
+        </p>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="projects">
+            <div class="project-card">
+                <video controls>
+                    <source src="c:\Users\yuvan\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\TempState\DB0513583C7B05237076D942BAAB7CE9\WhatsApp Video 2025-06-20 at 13.43.47_266ec768.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="project-card-content">
+                    <h3>Medical Vending Machine</h3>
+                    <p>An automated vending solution for dispensing medical supplies and medicines efficiently.</p>
+                    <ul>
+                        <li>Touchscreen interface for easy selection</li>
+                        <li>Real-time inventory tracking and alerts</li>
+                        <li>Secure payment integration (cashless)</li>
+                        <li>Automated restocking notifications</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="c:\Users\yuvan\OneDrive\Pictures\images.jpeg" alt="Realestate Management System">
+                <div class="project-card-content">
+                    <h3>Realestate Management System</h3>
+                    <p>A database management system for real estate listings and transactions.</p>
+                    <ul>
+                        <li>Property listing and search functionality</li>
+                        <li>User authentication and role management</li>
+                        <li>Transaction and payment tracking</li>
+                        <li>Admin dashboard for analytics and reports</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="c:\Users\yuvan\Downloads\react-portfolio-03.webp" alt="Portfolio Website">
+                <div class="project-card-content">
+                    <h3>Portfolio Website</h3>
+                    <p>This personal portfolio website showcases my fullstack development work and skills.</p>
+                    <ul>
+                        <li>Responsive design for all devices</li>
+                        <li>Interactive project gallery</li>
+                        <li>Contact form with email integration</li>
+                        <li>Modern and clean vs code</li>
+                        <li>Backend integration for dynamic content</li>
+                        <li>Deployed on a cloud platform</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="c:\Users\yuvan\Downloads\9b4492c9-0cd4-4a37-9cb1-670729ba50b4-cover.png" alt="Figma Design">
+                <div class="project-card-content">
+                    <h3>Figma UI/UX Design</h3>
+                    <p>
+                        UI/UX design prototype created in Figma.
+                        <br>
+                        <a href="https://www.figma.com/design/kdWL6mpwIAhjsH7M2aEgoI/Untitled?t=Zb7uNg52hYighPun-0" target="_blank">View Figma Project</a>
+                    </p>
+                    <ul>
+                        <li>Modern and clean interface layout</li>
+                        <li>Interactive prototype for user flow demonstration</li>
+                        <li>Consistent color palette and typography</li>
+                        <li>Designed for responsive web and mobile views</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Email: yuvanshankarutg@gmail.com</p>
+        <p>Phone: 8681883806</p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/yuvanshankar-ts-213868328/" target="_blank">linkedin.com/in/yuvanshankar-ts-213868328</a></p>
+    </section>
+
+    <footer>
+        &copy; 2024 Yuvanshankar. All rights reserved.
+    </footer>
+</body>
+</html>

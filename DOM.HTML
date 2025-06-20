@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Enhanced DOM Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+      background-color: #f9f9f9;
+    }
+    input, button {
+      padding: 10px;
+      margin: 5px;
+      font-size: 1em;
+    }
+    #output {
+      margin-top: 15px;
+      font-size: 1.2em;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Enhanced DOM Manipulation</h2>
+
+  <input type="text" id="nameInput" placeholder="Enter your name">
+
+  <br>
+
+  <button onclick="showName()">Click Me</button>
+  <button onclick="clearInput()">Clear</button>
+  <button onclick="changeBgColor()">Change Color</button>
+  <button onclick="toUpperCaseName()">To Uppercase</button>
+  <button onclick="resetAll()">Reset</button>
+
+  <p id="output"></p>
+
+  <script>
+    function showName() {
+      let name = document.getElementById("nameInput").value;
+      let output = document.getElementById("output");
+      output.innerHTML = "Hello, " + name + "!";
+    }
+
+    function clearInput() {
+      document.getElementById("nameInput").value = "";
+      document.getElementById("output").innerHTML = "";
+    }
+
+    function changeBgColor() {
+      const colors = ["#f9f9f9", "#e3f2fd", "#fff3e0", "#fce4ec", "#e8f5e9"];
+      document.body.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+    }
+
+    function toUpperCaseName() {
+      let input = document.getElementById("nameInput");
+      input.value = input.value.toUpperCase();
+    }
+
+    function resetAll() {
+      document.getElementById("nameInput").value = "";
+      document.getElementById("output").innerHTML = "";
+      document.body.style.backgroundColor = "#f9f9f9";
+    }
+  </script>
+
+</body>
+</html>

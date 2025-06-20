@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Double Click Example</title>
+</head>
+<body>
+    <h2>Double-click the boxes to change their colors:</h2>
+    <div id="dblBox1" style="width:200px; height:200px; background-color:lightblue; margin:10px; display:inline-block;"></div>
+    <div id="dblBox2" style="width:200px; height:200px; background-color:lightgreen; margin:10px; display:inline-block;"></div>
+    <div id="dblBox3" style="width:200px; height:200px; background-color:lightpink; margin:10px; display:inline-block;"></div>
+    <script>
+        function toggleColor(boxId, color1, color2) {
+            const box = document.getElementById(boxId);
+            box.ondblclick = function() {
+                this.style.backgroundColor = this.style.backgroundColor === color1 ? color2 : color1;
+            };
+        }
+        toggleColor('dblBox1', 'lightblue', 'orange');
+        toggleColor('dblBox2', 'lightgreen', 'purple');
+        toggleColor('dblBox3', 'lightpink', 'teal');
+    </script>
+</body>
+</html>

@@ -43,10 +43,6 @@
         }
 
         .scroll-box {
-            background: #fff;
-            border-radius: 12px;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.12);
-            width: 100%;
             height: 180px;
             padding: 18px;
             overflow-y: auto;
@@ -54,7 +50,10 @@
             font-size: 1.1em;
             line-height: 1.6;
             border: 1px solid #e0e0e0;
-            position: relative;
+            background-color: #fff;
+            border-radius: 8px;
+            width: 100%;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
         .google-img {
@@ -66,30 +65,43 @@
         }
 
         .scroll-btn {
-            padding: 8px 20px;
-            background: #4285F4;
+            padding: 10px 20px;
+            background-color: #4285F4;
             color: #fff;
             border: none;
-            border-radius: 6px;
-            font-size: 1em;
+            border-radius: 5px;
             cursor: pointer;
-            font-weight: bold;
-            transition: background 0.2s;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
         }
 
         .scroll-btn:hover {
-            background: #3367d6;
+            background-color: #3367D6;
         }
     </style>
 </head>
 <body>
+
     <div class="grid-container">
-        <div class="moving-heading">Google</div>
+        <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" class="google-img" alt="Google Logo">
+        <div class="moving-heading">Google Animated Heading</div>
+
         <div class="scroll-box" id="scrollBox">
-            <img class="google-img" src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google Logo">
-            Google is a multinational technology company specializing in Internet-related services and products, which include online advertising technologies, a search engine, cloud computing, software, and hardware. Google is considered one of the most influential tech companies in the world, shaping the way people access and interact with information every day. Its mission is to organize the world’s information and make it universally accessible and useful.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. 
+            Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. 
+            Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. 
+            Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat.
         </div>
-        <button class="scroll-btn" onclick="document.getElementById('scrollBox').scrollTop = 0;">continue</button>
+
+        <button class="scroll-btn" onclick="scrollToBottom()">Scroll to Bottom</button>
     </div>
+
+    <script>
+        function scrollToBottom() {
+            var box = document.getElementById('scrollBox');
+            box.scrollTop = box.scrollHeight;
+        }
+    </script>
+
 </body>
 </html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Form Validation</title>
+    <style>
+        body {
+            background: #f5f7fa;
+            font-family: 'Roboto', Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .validation-container {
+            background: #fff;
+            padding: 32px 28px;
+            border-radius: 10px;
+            box-shadow: 0 2px 12px rgba(44,83,100,0.10);
+            max-width: 400px;
+            width: 100%;
+        }
+        h2 {
+            color: #2c5364;
+            margin-bottom: 18px;
+            font-family: 'Montserrat', Arial, sans-serif;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+        }
+        input[type="text"], input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #b0bec5;
+            border-radius: 5px;
+            margin-bottom: 16px;
+            font-size: 1rem;
+        }
+        .error {
+            color: #e53935;
+            font-size: 0.97rem;
+            margin-bottom: 10px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #2c5364;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        button:hover {
+            background: #0f2027;
+        }
+        .success {
+            color: #388e3c;
+            font-size: 1rem;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="validation-container">
+        <h2>Simple Validation Form</h2>
+        <p style="color:#555; font-size:0.98rem; margin-bottom:18px;">
+            Please fill out the form below. Your name and a valid email address are required to proceed. This helps us ensure your information is accurate and allows us to contact you if needed.
+        </p>
+        <form id="myForm" novalidate>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <div id="nameError" class="error"></div>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <div id="emailError" class="error"></div>
+
+            
+            <label for="age">Age:</label>
+            <input type="text" id="age" name="age" required>
+            <div id="ageError" class="error"></div>
+
+            <button type="submit">Submit</button>
+            <div id="successMsg" class="success"></div>
+        </form>
+        <div id="showData" style="display:none; margin-top:20px; background:#e3f2fd; padding:16px; border-radius:8px; color:#222;"></div>
+    </div>
+    <script>
+        const form = document.getElementById('myForm');
+        const nameInput = document.getElementById('name');
+        const emailInput = document.getElementById('email');
+        const ageInput = document.getElementById('age');
+        const nameError = document.getElementById('nameError');
+        const emailError = document.getElementById('emailError');
+        const ageError = document.getElementById('ageError');
+        const successMsg = document.getElementById('successMsg');
+        const showData = document.getElementById('showData');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            let valid = true;
+            nameError.textContent = '';
+            emailError.textContent = '';
+            ageError.textContent = '';
+            successMsg.textContent = '';
+            showData.style.display = 'none';
+            showData.textContent = '';
+
+            if (nameInput.value.trim() === '') {
+                nameError.textContent = 'Name is required.';
+                valid = false;
+            }
+
+            if (emailInput.value.trim() === '') {
+                emailError.textContent = 'Email is required.';
+                valid = false;
+            } else if (!/^\S+@\S+\.\S+$/.test(emailInput.value.trim())) {
+                emailError.textContent = 'Enter a valid email address.';
+                valid = false;
+            }
+
+            if (ageInput.value.trim() === '') {
+                ageError.textContent = 'Age is required.';
+                valid = false;
+            } else if (!/^\d+$/.test(ageInput.value.trim()) || parseInt(ageInput.value, 10) <= 0) {
+                ageError.textContent = 'Enter a valid age.';
+                valid = false;
+            }
+
+            if (valid) {
+                successMsg.textContent = 'Form submitted successfully!';
+                showData.innerHTML = `
+                    <strong>Entered Details:</strong><br>
+                    Name: ${nameInput.value}<br>
+                    Email: ${emailInput.value}<br>
+                    Age: ${ageInput.value}
+                `;
+                showData.style.display = 'block';
+                form.reset();
+            }
+        });
+    </script>
+</body>
+</html>

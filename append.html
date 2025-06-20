@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Append Element Example</title>
+</head>
+<body>
+    <button onclick="appendElement()">Add Paragraph</button>
+    <div id="container" style="margin-top:20px;"></div>
+    <script>
+        let count = 1;
+        function appendElement() {
+            const p = document.createElement('p');
+            p.textContent = `This is paragraph ${count++}`;
+            document.getElementById('container').appendChild(p);
+        }
+    </script>
+</body>
+</html>
